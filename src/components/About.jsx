@@ -14,8 +14,8 @@ export default function About() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" style={{ padding: "100px 0" }}>
-      <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 32px" }}>
+    <section id="about">
+      <div className="container-inner" style={{ maxWidth: 1100 }}>
 
         {/* Section header */}
         <motion.div

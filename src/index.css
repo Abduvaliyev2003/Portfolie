@@ -121,6 +121,7 @@ body {
   padding: 1px;
   background: linear-gradient(135deg, rgba(0,245,255,0.3) 0%, transparent 60%, rgba(191,0,255,0.2) 100%);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
@@ -220,5 +221,18 @@ body {
   z-index: 0;
 }
 
+/* ─── Layout Utils ──────────────────────────────────────────── */
+.container-inner {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+@media (min-width: 768px) {
+  .container-inner { padding: 0 32px; }
+}
+
 /* ─── Section spacing ───────────────────────────────────────── */
-section { padding: 100px 0; }
+section { padding: 60px 0; }
+@media (min-width: 768px) {
+  section { padding: 100px 0; }
+}

@@ -92,14 +92,11 @@ export default function Hero() {
 
       {/* Hero Content */}
       <div
+        className="container-inner"
         style={{
           position: "relative",
           zIndex: 2,
           maxWidth: 900,
-          padding: "0 32px",
-          marginLeft: "auto",
-          marginRight: "auto",
-          width: "100%",
         }}
       >
         {/* Status badge */}

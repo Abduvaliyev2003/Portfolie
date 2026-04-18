@@ -91,8 +91,8 @@ export default function Contact() {
   });
 
   return (
-    <section id="contact" style={{ padding: "100px 0 60px" }}>
-      <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 32px" }}>
+    <section id="contact" style={{ paddingBottom: "60px" }}>
+      <div className="container-inner" style={{ maxWidth: 1100 }}>
 
         {/* Header */}
         <motion.div

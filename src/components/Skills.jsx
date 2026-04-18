@@ -60,8 +60,8 @@ export default function Skills() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="skills" style={{ padding: "100px 0", background: "rgba(0,0,0,0.2)" }}>
-      <div style={{ maxWidth: 1100, margin: "0 auto", padding: "0 32px" }}>
+    <section id="skills" style={{ background: "rgba(0,0,0,0.2)" }}>
+      <div className="container-inner" style={{ maxWidth: 1100 }}>
 
         {/* Header */}
         <motion.div

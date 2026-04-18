@@ -141,8 +141,8 @@ export default function Resume() {
       )}
 
       {/* ── Main styled section ── */}
-      <section id="resume" style={{ padding: "100px 0" }}>
-        <div style={{ maxWidth: 960, margin: "0 auto", padding: "0 32px" }}>
+      <section id="resume">
+        <div className="container-inner" style={{ maxWidth: 960 }}>
 
           {/* Header */}
           <motion.div

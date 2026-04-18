@@ -137,8 +137,8 @@ export default function Projects() {
   const filtered = filter === "All" ? PROJECTS : PROJECTS.filter(p => p.category === filter);
 
   return (
-    <section id="projects" style={{ padding: "100px 0" }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 32px" }}>
+    <section id="projects">
+      <div className="container-inner" style={{ maxWidth: 1200 }}>
 
         {/* Header */}
         <motion.div
@@ -201,7 +201,7 @@ export default function Projects() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
             gap: 24,
           }}
         >
