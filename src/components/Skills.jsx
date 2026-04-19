@@ -4,20 +4,20 @@ import { motion, useInView } from "framer-motion";
 import { SKILLS } from "../data/projects";
 
 const ALL_SKILLS_FLAT = [
-  { name: "Python",       level: 92, color: "#00f5ff" },
-  { name: "Go",           level: 80, color: "#00f5ff" },
-  { name: "Rust",         level: 65, color: "#bf00ff" },
-  { name: "SQL",          level: 88, color: "#39ff14" },
-  { name: "Bash",         level: 82, color: "#39ff14" },
-  { name: "FastAPI",      level: 90, color: "#00f5ff" },
-  { name: "Django",       level: 75, color: "#00f5ff" },
-  { name: "PostgreSQL",   level: 87, color: "#39ff14" },
-  { name: "Redis",        level: 80, color: "#ff3c3c" },
-  { name: "MongoDB",      level: 72, color: "#39ff14" },
-  { name: "Docker",       level: 85, color: "#00f5ff" },
-  { name: "Kubernetes",   level: 68, color: "#bf00ff" },
-  { name: "Nginx",        level: 78, color: "#39ff14" },
-  { name: "GitHub Actions",level:80, color: "#bf00ff" },
+  { name: "PHP",          level: 95, color: "#00f5ff" },
+  { name: "Laravel",      level: 92, color: "#00f5ff" },
+  { name: "MySQL",        level: 88, color: "#39ff14" },
+  { name: "JavaScript",   level: 85, color: "#00f5ff" },
+  { name: "React.js",     level: 78, color: "#bf00ff" },
+  { name: "Python",       level: 75, color: "#00f5ff" },
+  { name: "Django",       level: 70, color: "#00f5ff" },
+  { name: "MongoDB",      level: 82, color: "#39ff14" },
+  { name: "Nginx",        level: 80, color: "#39ff14" },
+  { name: "Linux",        level: 85, color: "#39ff14" },
+  { name: "Git",          level: 90, color: "#bf00ff" },
+  { name: "REST API",     level: 92, color: "#00f5ff" },
+  { name: "HTML/CSS",     level: 88, color: "#39ff14" },
+  { name: "Postman",      level: 85, color: "#bf00ff" },
 ];
 
 function SkillBar({ name, level, color, inView, delay }) {

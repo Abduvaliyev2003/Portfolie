@@ -4,88 +4,63 @@ import { motion, useInView } from "framer-motion";
 
 // ─── CV Data ──────────────────────────────────────────────────
 const CV_DATA = {
-  name: "Asadbek Toshmatov",
-  title: "Senior Backend Engineer",
-  location: "Tashkent, Uzbekistan · Remote Worldwide",
-  email: "asadbek@example.com",
-  telegram: "@asadbek_dev",
-  github: "github.com/asadbek",
-  linkedin: "linkedin.com/in/asadbek-dev",
+  name: "Asadbek Abduvaliyev",
+  title: "Backend Developer (PHP)",
+  location: "Tashkent, Uzbekistan",
+  email: "abduvaliyevasad23@gmail.com",
+  telegram: "+998 99 878 48 03",
+  github: "github.com/Abduvaliyev2003",
+  linkedin: "linkedin.com/in/asadbek-abduvaliyev",
 
   summary:
-    "Backend engineer with 3+ years of production experience building high-load distributed systems, RESTful & gRPC APIs, and DevOps automation pipelines. Passionate about clean architecture, performance optimization, and open-source tooling.",
+    "Dynamic and detail-oriented Backend Developer with over 2 years of professional experience specializing in PHP and the Laravel framework. Proven expertise in building scalable RESTful APIs, managing server infrastructure, and developing high-performance web applications. Adept at optimizing database queries and managing Nginx/Linux environments to ensure high system availability.",
 
   experience: [
     {
       role: "Backend Developer",
-      company: "Freelance / Remote",
-      period: "2023 — Present",
-      tech: ["Python", "FastAPI", "Go", "PostgreSQL", "Redis", "Docker"],
+      company: "Jobo.uz",
+      period: "June 2023 – July 2025",
+      tech: ["PHP", "Laravel", "MySQL", "Nginx", "Linux", "REST API", "JSON API"],
       points: [
-        "Designed and deployed 5+ production-grade REST APIs serving 50k+ daily requests with 99.9% uptime SLA",
-        "Built multi-tenant Telegram Bot platform handling 50k+ messages/day with aiogram + async task queues",
-        "Architected secure API Gateway with JWT, rate limiting, and real-time traffic analytics",
-        "Automated CI/CD pipelines using GitHub Actions + Docker + Nginx, reducing deploy time by 70%",
-      ],
-    },
-    {
-      role: "Junior Backend Developer",
-      company: "Local Tech Startup · Tashkent",
-      period: "2022 — 2023",
-      tech: ["Python", "Django", "PostgreSQL", "Celery", "Redis"],
-      points: [
-        "Developed RESTful APIs for e-commerce platform serving 10k MAU",
-        "Optimized slow SQL queries with indexing strategies, achieving 4× query speed improvement",
-        "Integrated Yandex Maps API, payment gateways (Click, Payme) into production systems",
-        "Introduced Docker-based local dev environment used by 8-person engineering team",
-      ],
-    },
-    {
-      role: "Python Developer (Intern)",
-      company: "IT Training Center · Tashkent",
-      period: "2021 — 2022",
-      tech: ["Python", "Django", "SQLite", "HTML/CSS"],
-      points: [
-        "Built and maintained internal tools and admin dashboards using Django",
-        "Wrote automated test suites achieving 80% code coverage",
-        "Contributed to open-source Uzbek developer community projects",
+        "Engineered and maintained robust backend infrastructures for job portal applications using PHP and Laravel, improving system response times by 20%.",
+        "Developed and deployed automated Telegram bots for notifications and user interaction, streamlining communication workflows.",
+        "Managed and configured Linux-based servers (Nginx), ensuring optimal performance, security updates, and 99.9% uptime.",
+        "Architected and implemented comprehensive RESTful APIs to support seamless integration with mobile and web front-end platforms.",
+        "Collaborated with cross-functional teams to debug complex issues and deliver high-quality, maintainable code.",
       ],
     },
   ],
 
   education: [
     {
-      degree: "Bachelor of Computer Science",
-      school: "Tashkent University of Information Technologies (TUIT)",
-      period: "2019 — 2023",
-      note: "GPA: 3.8 / 4.0 · Focus: Software Engineering & Distributed Systems",
+      degree: "Bachelor in IT",
+      school: "MDIS Tashkent",
+      period: "2024 — 2028 (Expected)",
+      note: "Focusing on Software Engineering and Information Systems.",
     },
     {
-      degree: "Backend Development Specialization",
-      school: "PDP Academy · Tashkent",
-      period: "2020 — 2021",
-      note: "12-month intensive program · Python, Django, PostgreSQL",
+      degree: "Backend PHP Developer",
+      school: "Proweb Learning Center",
+      period: "2022",
+      note: "Intensive program covering PHP fundamentals, database design, and web architecture.",
     },
   ],
 
   certifications: [
-    { name: "Python Professional Certificate", issuer: "PDP Academy", year: "2021" },
-    { name: "Docker & Kubernetes Fundamentals", issuer: "Udemy", year: "2022" },
-    { name: "PostgreSQL Advanced", issuer: "DataCamp", year: "2023" },
+    { name: "IELTS Band 6.5", issuer: "IDP / British Council", year: "2025" },
   ],
 
   languages: [
     { lang: "Uzbek", level: "Native" },
-    { lang: "Russian", level: "Fluent (C1)" },
-    { lang: "English", level: "Professional (B2)" },
+    { lang: "Russian", level: "Upper-Intermediate (B2)" },
+    { lang: "English", level: "Upper-Intermediate (B2)" },
   ],
 
   skills: {
-    "Languages":  ["Python", "Go", "Rust", "Bash", "SQL"],
-    "Frameworks": ["FastAPI", "Django", "aiogram", "Gin", "gRPC"],
-    "Databases":  ["PostgreSQL", "MongoDB", "Redis", "ClickHouse"],
-    "DevOps":     ["Docker", "Kubernetes", "Nginx", "GitHub Actions", "Terraform", "Ansible"],
-    "Tools":      ["Git", "Linux", "Neovim", "tmux", "Prometheus", "Grafana"],
+    "Backend":    ["PHP", "Laravel", "Python (Django)", "REST API", "JSON API"],
+    "Database":   ["MySQL", "MongoDB"],
+    "Server":     ["Nginx", "Linux", "Git"],
+    "Frontend":   ["React.js", "JavaScript", "HTML", "CSS"],
   },
 };
 

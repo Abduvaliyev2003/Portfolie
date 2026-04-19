@@ -3,10 +3,10 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 const STATS = [
-  { value: "3+",  label: "Years Experience" },
-  { value: "20+", label: "Projects Shipped" },
-  { value: "50k+",label: "API req/day handled" },
-  { value: "99.9%",label: "Uptime SLA" },
+  { value: "2+",   label: "Years Experience" },
+  { value: "15+",  label: "Projects Delivered" },
+  { value: "10k+", label: "Daily Bot Users" },
+  { value: "99.9%", label: "Uptime SLA" },
 ];
 
 export default function About() {
@@ -89,10 +89,10 @@ export default function About() {
             {/* Bio text */}
             <div style={{ padding: "24px 28px" }}>
               {[
-                { cmd: "whoami", out: "Asadbek — Backend Developer based in Uzbekistan" },
-                { cmd: "cat experience.txt", out: "3+ years building production-grade backend systems.\nSpecialize in high-load APIs, microservices, and DevOps automation." },
-                { cmd: "echo $PASSION", out: "Clean architecture, open-source & making things FAST." },
-                { cmd: "cat goals.txt", out: "Currently exploring distributed systems, Rust performance\noptimization and AI-powered backend tooling." },
+                { cmd: "whoami", out: "Asadbek Abduvaliyev — Dedicated Backend Developer based in Tashkent" },
+                { cmd: "cat experience.txt", out: "2+ years of professional experience in high-performance PHP backend systems.\nExpertise in Laravel, RESTful APIs, and server infrastructure optimization." },
+                { cmd: "echo $PASSION", out: "Clean architecture, automated workflows & scalable systems." },
+                { cmd: "cat goals.txt", out: "Currently pursuing a Bachelor in IT while optimizing complex\nbackend architectures and exploring cloud automation." },
               ].map(({ cmd, out }, i) => (
                 <div key={i} style={{ marginBottom: 20 }}>
                   <div
@@ -180,11 +180,11 @@ export default function About() {
             <div className="glass-card" style={{ padding: "24px 28px" }}>
               <p className="section-label" style={{ marginBottom: 16 }}>// current_stack</p>
               {[
-                { k: "Primary Lang", v: "Python  /  Go" },
-                { k: "Database",     v: "PostgreSQL  /  MongoDB" },
-                { k: "Infra",        v: "Docker  /  Kubernetes  /  Nginx" },
-                { k: "Cloud",        v: "VPS  /  Railway  /  GCP" },
-                { k: "Status",       v: "🟢  Open to remote offers" },
+                { k: "Primary Lang", v: "PHP / Python (Django)" },
+                { k: "Database",     v: "MySQL / MongoDB" },
+                { k: "Frontend",     v: "React.js / JS / HTML / CSS" },
+                { k: "Infra",        v: "Nginx / Linux / Git" },
+                { k: "Status",       v: "🟢 Available for International Roles" },
               ].map(({ k, v }) => (
                 <div
                   key={k}

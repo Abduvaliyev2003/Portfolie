@@ -66,9 +66,9 @@ export const PROJECTS = [
 ];
 
 export const SKILLS = [
-  { category: "Languages",   items: ["Python", "Go", "Rust", "Bash", "SQL"] },
-  { category: "Frameworks",  items: ["FastAPI", "Django", "aiogram", "Gin", "gRPC"] },
-  { category: "Databases",   items: ["PostgreSQL", "MongoDB", "Redis", "ClickHouse"] },
-  { category: "DevOps",      items: ["Docker", "Kubernetes", "Nginx", "GitHub Actions", "Terraform"] },
-  { category: "Security",    items: ["JWT", "OAuth2", "SSL/TLS", "Rate Limiting", "Vault"] },
+  { category: "Languages",   items: ["PHP", "JavaScript", "Python", "SQL", "HTML/CSS"] },
+  { category: "Frameworks",  items: ["Laravel", "React.js", "Django", "Node.js", "Bootstrap"] },
+  { category: "Databases",   items: ["MySQL", "MongoDB", "PostgreSQL", "Redis"] },
+  { category: "Server/Cloud",items: ["Nginx", "Linux (Ubuntu)", "Git", "Docker", "REST API"] },
+  { category: "Tools",       items: ["VS Code", "Postman", "Composer", "npm/yarn", "Telegram Bot API"] },
 ];
