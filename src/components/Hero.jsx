@@ -185,9 +185,10 @@ export default function Hero() {
           transition={{ delay: 0.5 }}
           style={{
             fontFamily: "'Space Mono', monospace",
-            fontSize: "clamp(0.85rem, 2vw, 1rem)",
-            marginBottom: 48,
+            fontSize: "clamp(0.72rem, 2vw, 1rem)",
+            marginBottom: "clamp(28px, 6vw, 48px)",
             minHeight: 28,
+            wordBreak: "break-word",
           }}
         >
           <span style={{ color: "var(--neon-green)" }}>~/asadbek $ </span>
@@ -199,9 +200,9 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7 }}
-          style={{ display: "flex", gap: 16, flexWrap: "wrap" }}
+          style={{ display: "flex", gap: 12, flexWrap: "wrap" }}
         >
-          <a href="#projects" className="btn-neon">
+          <a href="#projects" className="btn-neon" style={{ flex: "1 1 auto", minWidth: 140 }}>
             <span>View Projects</span>
             <span>→</span>
           </a>
@@ -211,6 +212,8 @@ export default function Hero() {
             style={{
               borderColor: "var(--neon-green)",
               color: "var(--neon-green)",
+              flex: "1 1 auto",
+              minWidth: 140,
             }}
             onMouseEnter={e => {
               e.currentTarget.style.setProperty("--btn-bg", "var(--neon-green)");

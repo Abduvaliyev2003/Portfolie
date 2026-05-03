@@ -11,6 +11,9 @@ export default function MatrixRain() {
     const ctx = canvas.getContext("2d");
     let animId;
 
+    const isMobile = window.innerWidth < 768;
+    const fontSize = isMobile ? 16 : 13;
+
     const resize = () => {
       canvas.width  = window.innerWidth;
       canvas.height = window.innerHeight;
@@ -18,7 +21,6 @@ export default function MatrixRain() {
     resize();
     window.addEventListener("resize", resize);
 
-    const fontSize = 13;
     let cols = Math.floor(canvas.width / fontSize);
     let drops = Array(cols).fill(1).map(() => Math.random() * -100);
 
@@ -31,6 +33,9 @@ export default function MatrixRain() {
       while (drops.length < cols) drops.push(Math.random() * -100);
 
       for (let i = 0; i < cols; i++) {
+        // Skip every other column on mobile for performance
+        if (isMobile && i % 2 !== 0) continue;
+
         const char = CHARS[Math.floor(Math.random() * CHARS.length)];
         const y = drops[i] * fontSize;
 
@@ -51,7 +56,7 @@ export default function MatrixRain() {
         if (y > canvas.height && Math.random() > 0.975) {
           drops[i] = 0;
         }
-        drops[i] += 0.4 + Math.random() * 0.3;
+        drops[i] += isMobile ? 0.3 : (0.4 + Math.random() * 0.3);
       }
 
       animId = requestAnimationFrame(draw);

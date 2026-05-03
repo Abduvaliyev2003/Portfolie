@@ -76,7 +76,8 @@ function NetworkNodes() {
   const pointsRef = useRef();
 
   const [positions, sizes] = useMemo(() => {
-    const count = 120;
+    const isMobile = window.innerWidth < 768;
+    const count = isMobile ? 50 : 120;
     const pos = new Float32Array(count * 3);
     const sz = new Float32Array(count);
     for (let i = 0; i < count; i++) {
@@ -117,8 +118,10 @@ function NetworkNodes() {
 function StarField() {
   const ref = useRef();
   const positions = useMemo(() => {
-    const arr = new Float32Array(3000 * 3);
-    for (let i = 0; i < 3000; i++) {
+    const isMobile = window.innerWidth < 768;
+    const total = isMobile ? 1000 : 3000;
+    const arr = new Float32Array(total * 3);
+    for (let i = 0; i < total; i++) {
       arr[i * 3]     = (Math.random() - 0.5) * 30;
       arr[i * 3 + 1] = (Math.random() - 0.5) * 30;
       arr[i * 3 + 2] = (Math.random() - 0.5) * 30;

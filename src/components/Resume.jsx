@@ -161,7 +161,7 @@ export default function Resume() {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.15 }}
             className="glass-card"
-            style={{ padding: "32px 36px", marginBottom: 32 }}
+            style={{ padding: "clamp(20px, 3vw, 32px) clamp(18px, 3vw, 36px)", marginBottom: 32 }}
           >
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: 24 }}>
               <div>
@@ -175,7 +175,7 @@ export default function Resume() {
                   {CV_DATA.summary}
                 </p>
               </div>
-              <div style={{ display: "flex", flexDirection: "column", gap: 8, minWidth: 240 }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
                 {[
                   { icon: "📍", val: CV_DATA.location },
                   { icon: "📧", val: CV_DATA.email },
@@ -337,11 +337,6 @@ export default function Resume() {
           </div>
 
         </div>
-        <style>{`
-          @media (max-width: 768px) {
-            .grid-responsive { grid-template-columns: 1fr !important; }
-          }
-        `}</style>
       </section>
     </>
   );

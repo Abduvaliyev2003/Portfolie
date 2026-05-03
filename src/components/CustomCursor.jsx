@@ -1,13 +1,26 @@
-// Custom Cursor Component
-import { useEffect, useRef } from "react";
+// Custom Cursor Component — hidden on touch/mobile devices
+import { useEffect, useRef, useState } from "react";
 
 export default function CustomCursor() {
   const dotRef  = useRef(null);
   const ringRef = useRef(null);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   useEffect(() => {
+    // Detect touch device
+    const isTouch =
+      "ontouchstart" in window ||
+      navigator.maxTouchPoints > 0 ||
+      window.matchMedia("(pointer: coarse)").matches;
+    setIsTouchDevice(isTouch);
+  }, []);
+
+  useEffect(() => {
+    if (isTouchDevice) return;
+
     const dot  = dotRef.current;
     const ring = ringRef.current;
+    if (!dot || !ring) return;
     let raf;
 
     let mx = 0, my = 0;
@@ -42,7 +55,9 @@ export default function CustomCursor() {
       cancelAnimationFrame(raf);
       window.removeEventListener("mousemove", onMove);
     };
-  }, []);
+  }, [isTouchDevice]);
+
+  if (isTouchDevice) return null;
 
   return (
     <>

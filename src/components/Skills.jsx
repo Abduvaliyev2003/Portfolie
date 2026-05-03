@@ -102,7 +102,7 @@ export default function Skills() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ delay: 0.2 }}
             className="glass-card"
-            style={{ padding: "32px 28px" }}
+            style={{ padding: "clamp(22px, 3vw, 32px) clamp(18px, 3vw, 28px)" }}
           >
             <p className="section-label" style={{ marginBottom: 24 }}>// proficiency_levels</p>
             {ALL_SKILLS_FLAT.map((sk, i) => (
@@ -162,11 +162,6 @@ export default function Skills() {
         </div>
       </div>
 
-      <style>{`
-        @media (max-width: 768px) {
-          .grid-responsive { grid-template-columns: 1fr !important; }
-        }
-      `}</style>
     </section>
   );
 }

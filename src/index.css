@@ -236,3 +236,59 @@ section { padding: 60px 0; }
 @media (min-width: 768px) {
   section { padding: 100px 0; }
 }
+
+/* ─── Consolidated Responsive Grid ──────────────────────────── */
+@media (max-width: 768px) {
+  .grid-responsive {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+}
+
+/* ─── Touch Device / Mobile Cursor Fix ──────────────────────── */
+@media (pointer: coarse) {
+  body { cursor: auto !important; }
+  .cursor-dot, .cursor-ring { display: none !important; }
+  a, button, input, textarea, select { cursor: auto !important; }
+  .btn-neon { cursor: pointer !important; }
+}
+
+/* ─── Mobile ≤ 768px ────────────────────────────────────────── */
+@media (max-width: 768px) {
+  body { cursor: auto; }
+
+  .scanlines { opacity: 0.35; }
+
+  .glass-card:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  .btn-neon {
+    cursor: pointer;
+    padding: 12px 22px;
+    font-size: 0.78rem;
+    justify-content: center;
+  }
+
+  .tech-badge {
+    font-size: 0.65rem;
+    padding: 3px 8px;
+  }
+
+  .glitch::before,
+  .glitch::after {
+    opacity: 0.5;
+  }
+}
+
+/* ─── Mobile ≤ 480px (small phones) ─────────────────────────── */
+@media (max-width: 480px) {
+  section { padding: 40px 0; }
+  .container-inner { padding: 0 14px; }
+
+  .btn-neon {
+    width: 100%;
+    text-align: center;
+  }
+}

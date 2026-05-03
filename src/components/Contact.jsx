@@ -136,7 +136,7 @@ export default function Contact() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ delay: 0.2 }}
             className="glass-card"
-            style={{ padding: "36px 32px" }}
+            style={{ padding: "clamp(22px, 4vw, 36px) clamp(18px, 3vw, 32px)" }}
           >
             {!sent ? (
               <form onSubmit={handleSubmit}>
@@ -264,7 +264,7 @@ export default function Contact() {
         {/* Footer */}
         <div
           style={{
-            marginTop: 80,
+            marginTop: "clamp(40px, 8vw, 80px)",
             paddingTop: 32,
             borderTop: "1px solid rgba(0,245,255,0.08)",
             textAlign: "center",
@@ -276,11 +276,6 @@ export default function Contact() {
         </div>
       </div>
 
-      <style>{`
-        @media (max-width: 768px) {
-          .grid-responsive { grid-template-columns: 1fr !important; }
-        }
-      `}</style>
     </section>
   );
 }

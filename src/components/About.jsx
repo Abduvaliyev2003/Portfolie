@@ -87,7 +87,7 @@ export default function About() {
             </div>
 
             {/* Bio text */}
-            <div style={{ padding: "24px 28px" }}>
+            <div style={{ padding: "clamp(16px, 3vw, 24px) clamp(16px, 3vw, 28px)" }}>
               {[
                 { cmd: "whoami", out: "Asadbek Abduvaliyev — Dedicated Backend Developer based in Tashkent" },
                 { cmd: "cat experience.txt", out: "2+ years of professional experience in high-performance PHP backend systems.\nExpertise in Laravel, RESTful APIs, and server infrastructure optimization." },
@@ -210,11 +210,6 @@ export default function About() {
         </div>
       </div>
 
-      <style>{`
-        @media (max-width: 768px) {
-          .grid-responsive { grid-template-columns: 1fr !important; }
-        }
-      `}</style>
     </section>
   );
 }

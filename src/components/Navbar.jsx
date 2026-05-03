@@ -1,4 +1,4 @@
-// Navbar — Terminal-style sticky navigation
+// Navbar — Terminal-style sticky navigation with mobile hamburger
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -15,12 +15,27 @@ export default function Navbar() {
   const [scrolled, setScrolled]   = useState(false);
   const [menuOpen, setMenuOpen]   = useState(false);
   const [active, setActive]       = useState("#hero");
+  const [isMobile, setIsMobile]   = useState(window.innerWidth < 768);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
+    const onResize = () => setIsMobile(window.innerWidth < 768);
     window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", onResize);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onResize);
+    };
   }, []);
+
+  // Close menu on scroll
+  useEffect(() => {
+    if (menuOpen) {
+      const close = () => setMenuOpen(false);
+      window.addEventListener("scroll", close);
+      return () => window.removeEventListener("scroll", close);
+    }
+  }, [menuOpen]);
 
   const handleNav = (href) => {
     setActive(href);
@@ -38,29 +53,31 @@ export default function Navbar() {
         left: 0,
         right: 0,
         zIndex: 500,
-        padding: scrolled ? "12px 0" : "20px 0",
+        padding: scrolled ? "10px 0" : (isMobile ? "14px 0" : "20px 0"),
         background: scrolled
-          ? "rgba(3, 7, 18, 0.85)"
+          ? "rgba(3, 7, 18, 0.92)"
           : "transparent",
         backdropFilter: scrolled ? "blur(20px)" : "none",
+        WebkitBackdropFilter: scrolled ? "blur(20px)" : "none",
         borderBottom: scrolled ? "1px solid rgba(0,245,255,0.12)" : "none",
         transition: "all 0.4s ease",
       }}
     >
-      <div className="container-inner flex items-center justify-between" style={{ width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+      <div className="container-inner" style={{ width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         
-        {/* Mobile hamburger (Left on mobile) */}
+        {/* Mobile hamburger */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           style={{
             background: "none",
             border: "none",
-            cursor: "none",
+            cursor: "pointer",
+            display: isMobile ? "flex" : "none",
             flexDirection: "column",
             gap: 5,
-            padding: 4,
+            padding: 8,
+            zIndex: 10,
           }}
-          className="flex md:hidden"
           aria-label="Toggle menu"
         >
           {[0, 1, 2].map(i => (
@@ -69,8 +86,9 @@ export default function Navbar() {
               style={{
                 display: "block",
                 width: 24,
-                height: 1.5,
+                height: 2,
                 background: "var(--neon-cyan)",
+                borderRadius: 1,
                 transition: "all 0.3s",
                 transformOrigin: "center",
                 transform: menuOpen
@@ -89,7 +107,7 @@ export default function Navbar() {
           style={{
             fontFamily: "'Orbitron', monospace",
             fontWeight: 900,
-            fontSize: "1.1rem",
+            fontSize: isMobile ? "0.95rem" : "1.1rem",
             letterSpacing: "0.15em",
             color: "#fff",
             textDecoration: "none",
@@ -111,8 +129,8 @@ export default function Navbar() {
             gap: 8,
             listStyle: "none",
             alignItems: "center",
+            display: isMobile ? "none" : "flex",
           }}
-          className="hidden md:flex"
         >
           {NAV_LINKS.map(({ href, label }) => (
             <li key={href}>
@@ -149,7 +167,7 @@ export default function Navbar() {
             <a
               href="#contact"
               className="btn-neon"
-              style={{ padding: "6px 18px", fontSize: "0.75rem" }}
+              style={{ padding: "6px 18px", fontSize: "0.75rem", width: "auto" }}
             >
               Hire Me
             </a>
@@ -161,42 +179,63 @@ export default function Navbar() {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
             style={{
               position: "absolute",
               top: "100%",
               left: 0,
               right: 0,
-              background: "rgba(3,7,18,0.96)",
-              backdropFilter: "blur(20px)",
+              background: "rgba(3,7,18,0.97)",
+              backdropFilter: "blur(24px)",
+              WebkitBackdropFilter: "blur(24px)",
               borderBottom: "1px solid rgba(0,245,255,0.15)",
-              padding: "20px 16px",
+              padding: "16px 20px 24px",
               display: "flex",
               flexDirection: "column",
-              gap: 4,
+              gap: 2,
+              overflow: "hidden",
             }}
           >
-            {NAV_LINKS.map(({ href, label }) => (
-              <a
+            {NAV_LINKS.map(({ href, label }, i) => (
+              <motion.a
                 key={href}
                 href={href}
                 onClick={() => handleNav(href)}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: i * 0.05 }}
                 style={{
                   fontFamily: "'Space Mono', monospace",
-                  fontSize: "0.85rem",
+                  fontSize: "0.9rem",
                   color: active === href ? "var(--neon-cyan)" : "rgba(201,216,227,0.8)",
                   textDecoration: "none",
-                  padding: "10px 0",
+                  padding: "14px 12px",
+                  borderRadius: 8,
+                  background: active === href ? "rgba(0,245,255,0.06)" : "transparent",
                   borderBottom: "1px solid rgba(0,245,255,0.06)",
-                  cursor: "none",
+                  cursor: "pointer",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 10,
                 }}
               >
-                <span style={{ color: "var(--neon-green)", marginRight: 8 }}>›</span>
+                <span style={{ color: "var(--neon-green)", fontSize: "0.75rem" }}>›</span>
                 {label}
-              </a>
+              </motion.a>
             ))}
+
+            {/* Mobile CTA */}
+            <a
+              href="#contact"
+              onClick={() => handleNav("#contact")}
+              className="btn-neon"
+              style={{ marginTop: 12, textAlign: "center", justifyContent: "center" }}
+            >
+              Hire Me →
+            </a>
           </motion.div>
         )}
       </AnimatePresence>
